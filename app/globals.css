@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #f8f9f6;
+  --bg-card: #ffffff;
+  --text-primary: #1a2e1a;
+  --text-secondary: #4a6741;
+  --accent: #5a825a;
+  --accent-light: #e6ede6;
+  --border: #d4e0d4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #cddccd; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #a8c2a8; }
+
+/* Chat bubble animations */
+.bubble-enter {
+  animation: bubbleIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes bubbleIn {
+  0% { opacity: 0; transform: translateY(12px) scale(0.95); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Typing indicator */
+.typing-dot {
+  animation: typingBounce 1.2s ease-in-out infinite;
+}
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typingBounce {
+  0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
+  40% { transform: translateY(-6px); opacity: 1; }
+}
+
+/* Mood meter fill */
+.mood-fill {
+  transition: width 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Soft breathing animation for the avatar */
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+.breathe { animation: breathe 4s ease-in-out infinite; }
+
+/* Chart tooltip */
+.recharts-tooltip-wrapper { outline: none; }
+
+/* Prose in AI messages */
+.ai-message p { margin-bottom: 0.75rem; }
+.ai-message p:last-child { margin-bottom: 0; }
+.ai-message ul { list-style: disc; padding-left: 1.25rem; margin-bottom: 0.75rem; }
+.ai-message li { margin-bottom: 0.35rem; }
+.ai-message strong { font-weight: 600; color: #2e432e; }
