@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@google/generative-ai": "^0.15.0",
+    "@google/generative-ai": "^0.24.1",
     "clsx": "^2.1.1",
     "decimal.js-light": "^2.5.1",
     "firebase": "^12.13.0",
@@ -20,7 +20,7 @@
     "recharts": "^2.12.7"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@types/node": "^25.9.1",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
